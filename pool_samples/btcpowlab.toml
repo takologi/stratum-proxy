@@ -1,0 +1,25 @@
+# BTC PoW Lab connection example
+#
+# This file configures a controlled Stratum V1 compatibility test.
+# Replace the local port if it is already in use.
+# Supply the Bitcoin reward address and worker label in the miner interface.
+
+upstream_url = "stratum+tcp://stratum.btcpowlab-pool.com:3333"
+local_port = 12345
+log_file = "btcpowlab-stratum.log"
+color_console = true
+
+[[decorators]]
+name = "share submission"
+pattern = '(mining\.submit)'
+modifier = "\u001b[1;93m$1\u001b[0m"
+
+[[decorators]]
+name = "accepted share"
+pattern = '"result"\s*:\s*true'
+modifier = "\u001b[1;92m$0\u001b[0m"
+
+[[decorators]]
+name = "rejected share"
+pattern = '"result"\s*:\s*false'
+modifier = "\u001b[1;91m$0\u001b[0m"

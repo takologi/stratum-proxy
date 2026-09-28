@@ -90,3 +90,11 @@ Majority of the code was created using the GitHub Copilot with Claude Opus 4.5 m
 ## Donations
 
 I don't want any donations for myself. If you find this project helpful and want to express your gratitude, look at the [Rincoin project](https://www.rincoin.net), create a wallet, buy or mine some Rincoins and spread a word about it.
+
+## BTC PoW Lab sample
+
+A ready connection file is available at `pool_samples/btcpowlab.toml`. Build the proxy against Bitcoin Core, copy that file to `stratum.toml`, and point one test miner at the local proxy port. The miner username should contain the Bitcoin reward address and an optional worker label.
+
+The upstream endpoint is standard Stratum V1 over TCP. Pool rules, live status, and setup details are published at https://btcpowlab-pool.com/start.
+
+Power CM Software operates BTC PoW Lab and contributed this sample. Inclusion does not imply endorsement by this project. Mining outcomes are probabilistic, and a share does not guarantee a block, reward, or profit.
